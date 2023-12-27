@@ -47,7 +47,7 @@ export class ProductsRepository {
     });
 
     if (!product) {
-      throw new HttpStatus.NotFound('상품 조회에 실패했습니다.');
+      throw new HttpStatus.NotFound('게시글 조회에 실패했습니다.');
     }
 
     const userName = product.user.name;
@@ -62,7 +62,7 @@ export class ProductsRepository {
     const product = await prisma.products.findUnique({ where: { id } });
 
     if (!product) {
-      throw new HttpStatus.NotFound('상품 조회에 실패했습니다.');
+      throw new HttpStatus.NotFound('게시글 조회에 실패했습니다.');
     }
 
     const updatedProduct = await prisma.products.update({
@@ -81,7 +81,7 @@ export class ProductsRepository {
     const product = await prisma.products.findUnique({ where: { id } });
 
     if (!product) {
-      throw new HttpStatus.NotFound('상품 조회에 실패했습니다.');
+      throw new HttpStatus.NotFound('게시글 조회에 실패했습니다.');
     }
 
     const deletedProduct = await prisma.products.delete({ where: { id } });
